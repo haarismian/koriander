@@ -1,0 +1,8 @@
+.recipe-gallery-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.recipe-gallery-card {
+  width: 250px;
+}
