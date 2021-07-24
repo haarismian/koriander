@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { Card } from 'antd';
 import Meta from 'antd/lib/card/Meta';
 import './RecipeGallery.css';
-import recipeList from '../common/fixtures/recipe-list';
-import { IRecipe } from '../common/interfaces/recipe.interface';
+import { recipeList } from '../common/fixtures/recipe-list';
+import { IRecipe } from '../common/interfaces/interfaces';
 
 export default class RecipeGallery extends React.Component {
   render() {

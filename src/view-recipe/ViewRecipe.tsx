@@ -3,17 +3,25 @@ import { Image, Checkbox, Divider } from 'antd';
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { recipeList } from '../common/fixtures/recipe-list';
-
+import { IRecipe } from '../common/interfaces/interfaces';
+interface ParamTypes {
+  id: string;
+}
 const ViewRecipe = () => {
   // TODO: this page should probably query the backend for the recipe id to get all the relevant details
-  // let { id } = useParams();
+  const { id } = useParams<ParamTypes>();
 
-  // let recipe = recipeList.find((element) => element.recipe_id === id);
+  const recipe = recipeList.find((item) => item.recipe_id === id);
+
+  if (recipe === undefined) {
+    throw new TypeError('The value was promised to always be there!');
+  }
+
+  console.log(recipe);
 
   return (
     <div>
-      I am view recipe
-      {/* <h1>{recipe.recipe_name}</h1>
+      <h1>{recipe.recipe_name}</h1>
       <Image width={200} src={recipe.recipe_image_url} />
       {recipe.ingredients.map((ingredient) => (
         <ul>
@@ -29,7 +37,7 @@ const ViewRecipe = () => {
         {recipe.directions.map((direction) => (
           <li>{direction}</li>
         ))}
-      </ol> */}
+      </ol>
     </div>
   );
 };

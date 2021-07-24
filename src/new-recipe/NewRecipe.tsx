@@ -1,11 +1,22 @@
 import { Form, Input, Button, Space, Select } from 'antd';
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
+import { IRecipe } from '../common/interfaces/interfaces';
 const { Option, OptGroup } = Select;
 const { TextArea } = Input;
 
 const NewRecipe = () => {
   const onFinish = (values: any) => {
     console.log(values);
+
+    const formattedNewRecipe: IRecipe = {
+      recipe_id: 'test',
+      recipe_name: values.title,
+      recipe_description: values.description,
+      ingredients: values.ingredients,
+      recipe_image_url: values.recipe_image_url,
+      directions: values.directions,
+    };
+    console.log(formattedNewRecipe);
   };
 
   function handleChange(value: any) {
@@ -26,6 +37,13 @@ const NewRecipe = () => {
         <Input placeholder="Recipe Description" />
       </Form.Item>
       {/* Title & Description  END*/}
+
+      {/* Recipe image URL */}
+      <Form.Item label="Recipe Image URL" name={'recipe_image_url'}>
+        <Input placeholder="Recipe Image URL" />
+      </Form.Item>
+      {/* Recipe image URL END */}
+
       {/* Ingredients list */}
       {/* TODO: Each one should be quantity, measurement, ingredient name, optional preparation */}
       <Form.List name="ingredients">
@@ -116,7 +134,7 @@ const NewRecipe = () => {
                   fieldKey={[fieldKey, 'directions']}
                   // rules={[{ required: true, message: 'Missing first name' }]}
                 >
-                  <TextArea rows={4} />
+                  <TextArea rows={4} style={{ width: 500 }} />
                 </Form.Item>
 
                 <MinusCircleOutlined onClick={() => remove(name)} />

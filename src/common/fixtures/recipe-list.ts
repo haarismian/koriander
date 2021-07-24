@@ -1,4 +1,4 @@
-import { IRecipe } from '../interfaces/recipe.interface';
+import { IRecipe } from '../interfaces/interfaces';
 
 export const recipeList: IRecipe[] = [
   {
