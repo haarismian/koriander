@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/api', routes);
 
 app.get('/', (req, res) => {
-  res.send('Welcome to the backend');
+  res.send({ message: 'Welcome to the backend' });
 });
 
 app.listen(port, () => {
