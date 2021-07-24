@@ -1,16 +1,18 @@
-const recipeList = [
+import { IRecipe } from '../interfaces/recipe.interface';
+
+export const recipeList: IRecipe[] = [
   {
     recipe_id: 'abc123',
     recipe_name: 'Cookies',
     recipe_description: 'unreal cookies',
     ingredients: [
       {
-        ingredient_qty: '1',
+        ingredient_qty: 1,
         ingredient_measurement: 'lb',
         ingredient_name: 'butter',
       },
       {
-        ingredient_qty: '1',
+        ingredient_qty: 1,
         ingredient_measurement: 'lb',
         ingredient_name: 'flour',
       },
@@ -29,17 +31,15 @@ const recipeList = [
     directions: ['peel banana', 'eat banana'],
     ingredients: [
       {
-        ingredient_qty: '1',
+        ingredient_qty: 2,
         ingredient_measurement: 'unit',
         ingredient_name: 'banana',
       },
       {
-        ingredient_qty: '1',
+        ingredient_qty: 2,
         ingredient_measurement: 'lb',
         ingredient_name: 'sugar',
       },
     ],
   },
 ];
-
-export default recipeList;

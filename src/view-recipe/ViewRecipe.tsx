@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Image, Checkbox, Divider } from 'antd';
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import recipeList from '../common/fixtures/recipe-list';
+import { recipeList } from '../common/fixtures/recipe-list';
 
 const ViewRecipe = () => {
   // TODO: this page should probably query the backend for the recipe id to get all the relevant details

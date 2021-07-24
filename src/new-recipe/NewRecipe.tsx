@@ -13,17 +13,7 @@ const NewRecipe = () => {
   }
 
   return (
-    <Form
-      name="dynamic_form_nest_item"
-      onFinish={onFinish}
-      autoComplete="off"
-      initialValues={{
-        title: 'sad',
-        description: 'dsa',
-        ingredients: Array(1),
-        directions: Array(1),
-      }}
-    >
+    <Form name="dynamic_form_nest_item" onFinish={onFinish} autoComplete="off">
       {/* Title & Description */}
       <Form.Item
         label="Title"

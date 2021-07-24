@@ -4,6 +4,7 @@ import { Card } from 'antd';
 import Meta from 'antd/lib/card/Meta';
 import './RecipeGallery.css';
 import recipeList from '../common/fixtures/recipe-list';
+import { IRecipe } from '../common/interfaces/recipe.interface';
 
 export default class RecipeGallery extends React.Component {
   render() {
@@ -13,7 +14,7 @@ export default class RecipeGallery extends React.Component {
 
     return (
       <div className="recipe-gallery-container">
-        {recipeList.map((recipe) => (
+        {recipeList.map((recipe: IRecipe) => (
           <Link to={`/recipes/${recipe.recipe_id}`}>
             <Card
               className="recipe-gallery-card"
