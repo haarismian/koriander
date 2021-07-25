@@ -5,8 +5,8 @@ let User = require('../models/recipe.model');
 
 router.route('/').get((req, res) => {
   User.find()
-    .then((users) => res.json({ users: 'test' }))
-    // .then((users) => res.json(users))
+    // .then((users) => res.json({ users: 'test' }))
+    .then((users) => res.json(users))
     .catch((err) => res.status(400).json('Error: ' + err));
 });
 
