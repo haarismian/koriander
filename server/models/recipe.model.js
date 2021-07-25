@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema(
+const recipeSchema = new Schema(
   {
     username: {
       type: String,
@@ -17,6 +17,6 @@ const userSchema = new Schema(
   }
 );
 
-const User = mongoose.model('User', userSchema);
+const Recipe = mongoose.model('User', recipeSchema);
 
 module.exports = User;
