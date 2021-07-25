@@ -1,12 +1,28 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res, next) => {
-  res.send({ message: 'welcome to the api', test2: 'asddsa' });
+let User = require('../models/recipe.model');
+
+router.route('/').get((req, res) => {
+  User.find()
+    .then((users) => res.json({ users: 'test' }))
+    // .then((users) => res.json(users))
+    .catch((err) => res.status(400).json('Error: ' + err));
 });
 
 // router.post('/todos', (req, res, next) => {});
 
 // router.delete('/todos/:id', (req, res, next) => {});
+
+router.route('/add').post((req, res) => {
+  const username = req.body.username;
+
+  const newUser = new User({ username });
+
+  newUser
+    .save()
+    .then(() => res.json('User added!'))
+    .catch((err) => res.status(400).json('Error: ' + err));
+});
 
 module.exports = router;
