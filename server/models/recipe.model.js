@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
+//TODO: update this file with recipe details
+
 const recipeSchema = new Schema(
   {
     username: {
