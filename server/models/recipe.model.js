@@ -21,4 +21,4 @@ const recipeSchema = new Schema(
 
 const Recipe = mongoose.model('User', recipeSchema);
 
-module.exports = User;
+module.exports = Recipe;
