@@ -1,5 +1,18 @@
-import { Form, Input, Button, Space, Select } from 'antd';
-import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
+import {
+  Form,
+  Input,
+  Button,
+  Space,
+  Select,
+  Menu,
+  Dropdown,
+  InputNumber,
+} from 'antd';
+import {
+  MinusCircleOutlined,
+  PlusOutlined,
+  DownOutlined,
+} from '@ant-design/icons';
 import { IRecipe } from '../common/interfaces/interfaces';
 const { Option, OptGroup } = Select;
 const { TextArea } = Input;
@@ -61,8 +74,21 @@ const NewRecipe = () => {
                   fieldKey={[fieldKey, 'ingredient_qty']}
                   // rules={[{ required: true, message: 'Missing first name' }]}
                 >
-                  <Input placeholder="Quantity" />
+                  {/* <Select showSearch style={{ width: 60 }}>
+                    <Option value="1">1</Option>
+                    <Option value="2">2</Option>
+                    <Option value="3">3</Option>
+                    <Option value="4">4</Option>
+                    <Option value="5">5</Option>
+                    <Option value="6">6</Option>
+                    <Option value="7">7</Option>
+                    <Option value="8">8</Option>
+                    <Option value="9">9</Option>
+                    <Option value="10">10</Option>
+                  </Select> */}
+                  <InputNumber placeholder="Quantity" />
                 </Form.Item>
+
                 <Form.Item
                   {...restField}
                   name={[name, 'ingredient_measurement']}
@@ -81,9 +107,12 @@ const NewRecipe = () => {
                       <Option value="pinch">Pinch</Option>
                     </OptGroup>
                     <OptGroup label="Volume">
-                      <Option value="tbsp">Tablespoons (tbsp)</Option>
                       <Option value="tsp">Teaspoons (tsp)</Option>
+                      <Option value="tbsp">Tablespoons (tbsp)</Option>
                       <Option value="fl_oz">Fluid ounces (fl oz)</Option>
+                      <Option value="cup">Cup</Option>
+                      <Option value="ml">milliliters (ml)</Option>
+                      <Option value="l">liters (L)</Option>
                     </OptGroup>
                     <OptGroup label="Weight">
                       <Option value="kg">Kilograms (kg)</Option>
