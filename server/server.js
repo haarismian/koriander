@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 
 require('dotenv').config();
 
-const routes = require('./routes/api');
+const recipeRouter = require('./routes/recipes');
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -29,7 +29,7 @@ app.use(bodyParser.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
-app.use('/api', routes);
+app.use('/api/recipes', recipeRouter);
 
 app.get('/', (req, res) => {
   res.send({ message: 'Welcome to the backend' });
