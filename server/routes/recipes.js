@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-let User = require('../models/recipe.model');
+let Recipe = require('../models/recipe.model');
 
 router.route('/').get((req, res) => {
-  User.find()
+  Recipe.find()
     .then((users) => res.json(users))
     .catch((err) => res.status(400).json('Error: ' + err));
 });
@@ -12,7 +12,7 @@ router.route('/').get((req, res) => {
 router.route('/add').post((req, res) => {
   const username = req.body.username;
 
-  const newUser = new User({ username });
+  const newUser = new Recipe({ username });
 
   newUser
     .save()
@@ -21,12 +21,12 @@ router.route('/add').post((req, res) => {
 });
 
 router.route('/:id').get((req, res) => {
-  User.findById(req.params.id)
+  Recipe.findById(req.params.id)
     .then((user) => res.json(user))
     .catch((err) => res.status(400).json('Error: ' + err));
 });
 router.route('/:id').delete((req, res) => {
-  User.findByIdAndDelete(req.params.id)
+  Recipe.findByIdAndDelete(req.params.id)
     .then(() => res.json('User deleted.'))
     .catch((err) => res.status(400).json('Error: ' + err));
 });

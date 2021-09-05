@@ -5,6 +5,7 @@ export interface IRecipe {
   ingredients: IIngredient[];
   recipe_image_url: string;
   directions: string[];
+  username?: string;
 }
 
 export interface IIngredient {

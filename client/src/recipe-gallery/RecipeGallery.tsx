@@ -26,7 +26,7 @@ const RecipeGallery = () => {
   return (
     <div className="recipe-gallery-container">
       <ul>
-        {data.map((item: any) => (
+        {data.map((item: IRecipe) => (
           <li key={item.username}>{item.username}</li>
         ))}
       </ul>
